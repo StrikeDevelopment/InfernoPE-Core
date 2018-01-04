@@ -25,7 +25,7 @@ class CustomPotion extends PluginCommand {
 	
 	public function execute(CommandSender $sender, $commandLabel, array $args) {
 		
-		if($sender->hasPermission("core.command.cp") || $sender->isOp()){
+		if($sender->hasPermission("core.elixer") || $sender->isOp()){
 				
 			if(isset($args[0])) {
 					 
@@ -70,7 +70,7 @@ class CustomPotion extends PluginCommand {
 			}
 		}
 		
-		if(!$sender->hasPermission("core.command.cp")) {
+		if(!$sender->hasPermission("core.elixer")) {
 					
 			$sender->sendMessage(TF::BOLD . TF::DARK_GRAY . "(" . TF::RED . "!" . TF::DARK_GRAY . ") " . TF::RESET . TF::GRAY . "You don't have permission to use this command.");
 				
