@@ -35,14 +35,16 @@ class Main extends PluginBase implements Listener{
             $this->getServer()->getCommandMap()->register("givekey", new SimpleCratesCommands("givekey", $this));
             $this->getServer()->getCommandMap()->register("custompotion", new CustomPotion("custompotion", $this));
             $this->getServer()->getCommandMap()->register("fly", new Fly("fly", $this));
-	        $this->getServer()->getCommandMap()->register("feed", new Feed("feed", $this));
-	        $this->getServer()->getCommandMap()->register("heal", new Heal("heal", $this));
-	        $this->getServer()->getCommandMap()->register("ping", new Ping("ping", $this));
-	        $this->getServer()->getCommandMap()->register("kickall", new KickAll("kickall", $this));
-	        $this->getServer()->getCommandMap()->register("ops", new Ops("ops", $this));
+	    $this->getServer()->getCommandMap()->register("feed", new Feed("feed", $this));
+	    $this->getServer()->getCommandMap()->register("heal", new Heal("heal", $this))
+	    $this->getServer()->getCommandMap()->register("ping", new Ping("ping", $this));
+	    $this->getServer()->getCommandMap()->register("kickall", new KickAll("kickall", $this));
+	    $this->getServer()->getCommandMap()->register("ops", new Ops("ops", $this));
             $this->getServer()->getCommandMap()->register("spawn", new Spawn("spawn", $this));
-	        $this->getServer()->getCommandMap()->register("setspawn", new SetSpawn("setspawn", $this));
-	        $this->getServer()->getCommandMap()->register("top", new Top("top", $this));
+	    $this->getServer()->getCommandMap()->register("setspawn", new SetSpawn("setspawn", $this));
+	    $this->getServer()->getCommandMap()->register("top", new Top("top", $this));
+	    $this->getServer()->getCommandMap()->register("nick", new Nick($this));
+            $this->getServer()->getCommandMap()->register("xyz", new XYZ($this));
         
             $this->getServer()->getPluginManager()->registerEvents((new SimpleCrates($this)), $this);
             $this->getServer()->getPluginManager()->registerEvents(new CustomPotionEvent($this), $this);
