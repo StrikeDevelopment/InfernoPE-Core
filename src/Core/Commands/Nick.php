@@ -1,13 +1,13 @@
 <?php
-namespace Potatoe\Command;
+namespace Core\Command;
 
-use Potatoe\Core;
+use Core\Loader;
 
 use pocketmine\command\CommandSender;
 use pocketmine\Player;
 use pocketmine\plugin\Plugin;
 
-class NickCommand extends BaseCommand {
+class Nick extends BaseCommand {
 
   public $nick = [];
   private $plugin;
