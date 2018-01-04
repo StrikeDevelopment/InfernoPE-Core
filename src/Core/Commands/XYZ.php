@@ -7,7 +7,7 @@ use pocketmine\command\CommandSender;
 use pocketmine\Player;
 use pocketmine\plugin\Plugin;
 
-class XYZCommand extends BaseCommand {
+class XYZ extends BaseCommand {
 
   private $plugin;
   
