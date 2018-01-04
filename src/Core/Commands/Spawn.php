@@ -33,6 +33,9 @@ class Spawn extends PluginCommand{
                         $y = $sender->getY();
                         $z = $sender->getZ();
                         $spawn = new Vector3($x, $y, $z);
+                        $this->plugin->getServer()->getScheduler()->scheduleDelayedTask(new SetTitleTask($this->plugin, $player,  C::RED . "3"), 20);
+                        $this->plugin->getServer()->getScheduler()->scheduleDelayedTask(new SetTitleTask($this->plugin, $player,  C::YELLOW . "2"), 20);
+                        $this->plugin->getServer()->getScheduler()->scheduleDelayedTask(new SetTitleTask($this->plugin, $player,  C::GREEN . "1"), 20);
                         $sender->sendMessage(C::GREEN . "Teleporting to Spawn.");
                         $sender->teleport($this->getPlugin()->getServer()->getDefaultLevel()->getSafeSpawn());
                         $level->addSound(new EndermanTeleportSound($spawn));
