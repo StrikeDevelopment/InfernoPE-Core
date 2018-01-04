@@ -1,5 +1,6 @@
 <?php
-namespace Core\Command;
+
+namespace Core\Commands;
 
 use Core\Loader;
 
