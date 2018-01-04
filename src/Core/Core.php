@@ -7,10 +7,12 @@ use pocketmine\plugin\PluginBase;
 use Core\Commands\SimpleCratesCommand;
 use pocketmine\utils\TextFormat as c;
 use Core\SimpleCrates\SimpleCrates;
+
 class Main extends PluginBase implements Listener{
+    
     public function onEnable(){
         $this->registerCommands();
-        $this->registerEventss();
+        $this->registerEvents();
     }
     /**
      * registers Commands
