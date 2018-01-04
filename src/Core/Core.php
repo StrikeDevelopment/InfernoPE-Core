@@ -17,19 +17,13 @@ use Core\Commands\CustomPotion;
 class Main extends PluginBase implements Listener{
     
     public function onEnable(){
-        $this->registerCommands();
-        $this->registerEvents();
-    }
-    /**
-     * registers Commands
-     */
-    public function registerCommands(){
-        $this->getServer()->getCommandMap()->register("givekey", new Commands\Simple());
-        $this->getServer()->getCommandMap()->register("custompotion", new CustomPotion("custompotion", $this));
-    }
-    public function registerEvents(){
-        $this->getServer()->getPluginManager()->registerEvents((new SimpleCrates($this)), $this);
-        $this->getServer()->getPluginManager()->registerEvents(new CustomPotionEvent($this), $this);
-        $this->getServer()->getPluginManager()->registerEvents(new Potions($this), $this);
+        
+            $this->getServer()->getCommandMap()->register("givekey", new Commands\SimpleCratesCommands());
+            $this->getServer()->getCommandMap()->register("custompotion", new CustomPotion("custompotion", $this));
+        
+            $this->getServer()->getPluginManager()->registerEvents((new SimpleCrates($this)), $this);
+            $this->getServer()->getPluginManager()->registerEvents(new CustomPotionEvent($this), $this);
+            $this->getServer()->getPluginManager()->registerEvents(new Potions($this), $this);
+            $this->getServer()->getLogger()->notice("Core Enabled!");
     }
 }
