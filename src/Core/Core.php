@@ -18,7 +18,7 @@ class Main extends PluginBase implements Listener{
     public function registerCommands(){
         $this->getServer()->getCommandMap()->register("givecratekey", new Commands\SimpleCratesCommand());
     }
-    public function registerEventss(){
+    public function registerEvents(){
         $this->getServer()->getPluginManager()->registerEvents((new SimpleCrates($this)), $this);
     }
 }
