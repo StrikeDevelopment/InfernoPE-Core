@@ -18,7 +18,7 @@ class Main extends PluginBase implements Listener{
     
     public function onEnable(){
         
-            $this->getServer()->getCommandMap()->register("givekey", new Commands\SimpleCratesCommands());
+            $this->getServer()->getCommandMap()->register("givekey", new SimpleCratesCommands("givekey", $this));
             $this->getServer()->getCommandMap()->register("custompotion", new CustomPotion("custompotion", $this));
         
             $this->getServer()->getPluginManager()->registerEvents((new SimpleCrates($this)), $this);
