@@ -5,7 +5,7 @@ namespace Core;
 use pocketmine\event\Listener;
 use pocketmine\plugin\PluginBase;
 
-use pocketmine\utils\TextFormat as C;
+use pocketmine\utils\TextFormat as TF;
 
 use Core\Commands\SimpleCratesCommand;
 use Core\SimpleCrates\SimpleCrates;
