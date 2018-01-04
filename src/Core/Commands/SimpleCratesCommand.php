@@ -20,7 +20,7 @@ class SimpleCratesCommand extends BaseCommand {
 
     public function __construct(Core $plugin){
         $this->plugin = $plugin;
-        parent::__construct($plugin, "givecratekey", "Give a player a cratekey", "/givecratekey", ["givecratekey"]);
+        parent::__construct($plugin, "givekey", "Give a player a cratekey", "/givekey", ["key"]);
     }
 
     public function execute(CommandSender $sender, $commandLabel, array $args) : bool {
