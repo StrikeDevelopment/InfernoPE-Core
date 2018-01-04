@@ -1,7 +1,8 @@
 <?php
-namespace Potatoe\Command;
 
-use Potatoe\Core;
+namespace Core\Commands;
+
+use Core\Commands;
 
 use pocketmine\command\CommandSender;
 use pocketmine\Player;
