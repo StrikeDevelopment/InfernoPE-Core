@@ -25,11 +25,11 @@ class Feed extends PluginCommand{
     public function execute(CommandSender $sender, string $commandLabel, array $args): bool{
                     if($sender instanceof Player){
                     if (!$sender->hasPermission("core.feed")) {
-                        $sender->sendMessage(C::RED . "You are not allow to do that.");
+                        $sender->sendMessage(C::RED . "§l§7(§c!§7) §r§4Buy A Rank To Use This Command!");
                         return false;
                     }
                         $sender->setFood(20);
-                        $sender->sendMessage(C::GREEN . "You have been fed.");
+                        $sender->sendMessage(C::GREEN . "§l§7(§a!§7) §r§2Your Hunger Has Been Restored!");
         }else{
           $sender->sendMessage(C::RED . "You are not In-Game.");
         }
