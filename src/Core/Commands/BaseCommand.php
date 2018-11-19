@@ -40,7 +40,7 @@ class BaseCommand extends Command implements PluginIdentifiableCommand
             }
             return true;
         } else {
-            $sender->sendMessage("§l§9Error>§r Such Command, No Permission");
+            $sender->sendMessage("§l§7» §r§cYou dont have permision to use this command here on CowCraftPE!");
         }
         return false;
     }
