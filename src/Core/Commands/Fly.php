@@ -29,28 +29,28 @@ class Fly extends PluginCommand{
     public function execute(CommandSender $sender, string $commandLabel, array $args): bool{
         if($sender instanceof Player){
         if (count($args) < 1) {
-            $sender->sendMessage("Usage: /fly <on|off>");
+            $sender->sendMessage("§l§7(§d!§7)§r §3Usage: §b/fly §aon§7|§coff");
             return false;
         }
         switch ($args[0]){
             case "on":
                     if (!$sender->hasPermission("core.fly")) {
-                        $sender->sendMessage(C::RED . "You are not allow to do that.");
+                        $sender->sendMessage(C::RED . "§l§7(§c!§7) §r§4Buy A Rank To Use This Command!");
                         return false;
                     }
                         $sender->setAllowFlight(true);
-                        $sender->sendMessage(C::YELLOW . "Fly Mode :" . C::GREEN . " Enabled.");
+                        $sender->sendMessage(C::YELLOW . "§l§7(§a!§7)§r§a Fly mode:" . C::GREEN . " §7Enabled.");
             break;
             case "off":
                     if (!$sender->hasPermission("core.fly")) {
-                        $sender->sendMessage(C::RED . "You are not allow to do that.");
+                        $sender->sendMessage(C::RED . "§l§7(§c!§7) §r§4Buy A Rank To Use This Command!");
                         return false;
                     }
                         $sender->setAllowFlight(false);
-                        $sender->sendMessage(C::YELLOW . "Fly Mode :" . C::RED . " Disabled.");
+                        $sender->sendMessage(C::YELLOW . "§l§7(§a!§7)§r§a Fly mode:" . C::RED . " §7Disabled.");
             break;
             default:
-            $sender->sendMessage("Usage: /fly <on|off>");
+            $sender->sendMessage("§7§l(§d!§7)§r§3 Usage: §b/fly §aon§7|§aoff");
             break;
             }
         }else{
