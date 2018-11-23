@@ -15,7 +15,7 @@ use pocketmine\event\player\PlayerMoveEvent;
 
 use pocketmine\utils\TextFormat as C;
 
-use Core\Main;
+use Core\Loader;
 
 class Fly extends PluginCommand{
 
@@ -35,7 +35,7 @@ class Fly extends PluginCommand{
         switch ($args[0]){
             case "on":
                     if (!$sender->hasPermission("core.fly")) {
-                        $sender->sendMessage(C::RED . "§l§7(§c!§7) §r§4Buy A Rank To Use This Command!");
+                        $sender->sendMessage(Core::PERM_RANK);
                         return false;
                     }
                         $sender->setAllowFlight(true);
@@ -43,7 +43,7 @@ class Fly extends PluginCommand{
             break;
             case "off":
                     if (!$sender->hasPermission("core.fly")) {
-                        $sender->sendMessage(C::RED . "§l§7(§c!§7) §r§4Buy A Rank To Use This Command!");
+                        $sender->sendMessage(Core::PERM_RANK);
                         return false;
                     }
                         $sender->setAllowFlight(false);
@@ -54,7 +54,7 @@ class Fly extends PluginCommand{
             break;
             }
         }else{
-          $sender->sendMessage(C::RED . "You are not In-Game.");
+          $sender->sendMessage(Core::USE_IN_GAME);
         }
             return true;
     }
