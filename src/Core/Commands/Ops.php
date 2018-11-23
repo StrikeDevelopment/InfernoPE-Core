@@ -11,7 +11,7 @@ use pocketmine\command\PluginCommand;
 
 use pocketmine\utils\TextFormat as C;
 
-use Core\Main;
+use Core\Loader;
 
 class Ops extends PluginCommand{
 
@@ -24,7 +24,7 @@ class Ops extends PluginCommand{
      
     public function execute(CommandSender $sender, string $commandLabel, array $args): bool{
                     if (!$sender->hasPermission("core.ops")) {
-                        $sender->sendMessage(C::RED . "You are not allow to do that.");
+                        $sender->sendMessage(Core::PERM_STAFF);
                         return false;
                     }
                         $ops = "";
