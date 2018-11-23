@@ -30,29 +30,29 @@ use Core\Commands\Teleport\Top;
 
 class Main extends PluginBase implements Listener{
 	
-    const PERM_RANK = C::BOLD . C::BLUE . "Permission> " . C::RESET . C::GRAY . "You Need A Rank To Access This Command";
-    const PERM_STAFF = C::BOLD . C::BLUE . "Permission> " . C::RESET . C::GRAY . "Only Staff Can Use This Command";
-    const USE_IN_GAME = C::BOLD . C::BLUE . "Command> " . C::RESET . C::GRAY . "Use Command In Game";	
+    const PERM_RANK = C::BOLD . C::BLUE . "» " . C::RESET . C::GRAY . "Buy a rank from shopccpe.buycraft.net to access this command!";
+    const PERM_STAFF = C::BOLD . C::BLUE . "» " . C::RESET . C::GRAY . "You do not have the correct permisions to acccess this command!";
+    const USE_IN_GAME = C::BOLD . C::BLUE . "» " . C::RESET . C::GRAY . "Use Command In Game";	
     
     public function onEnable(){
         
             $this->getServer()->getCommandMap()->register("givekey", new SimpleCratesCommands("givekey", $this));
-            $this->getServer()->getCommandMap()->register("custompotion", new CustomPotion("custompotion", $this));
-            $this->getServer()->getCommandMap()->register("fly", new Fly("fly", $this));
-	    $this->getServer()->getCommandMap()->register("feed", new Feed("feed", $this));
-	    $this->getServer()->getCommandMap()->register("heal", new Heal("heal", $this))
-	    $this->getServer()->getCommandMap()->register("ping", new Ping("ping", $this));
-	    $this->getServer()->getCommandMap()->register("kickall", new KickAll("kickall", $this));
-	    $this->getServer()->getCommandMap()->register("ops", new Ops("ops", $this));
-            $this->getServer()->getCommandMap()->register("spawn", new Spawn("spawn", $this));
-	    $this->getServer()->getCommandMap()->register("setspawn", new SetSpawn("setspawn", $this));
-	    $this->getServer()->getCommandMap()->register("top", new Top("top", $this));
-	    $this->getServer()->getCommandMap()->register("nick", new Nick($this));
-            $this->getServer()->getCommandMap()->register("xyz", new XYZ($this));
+            $this->getServer()->getCommandMap()->register("givescroll", new CustomPotion("givescroll", $this));
+            $this->getServer()->getCommandMap()->register("ccfly", new Fly("ccfly", $this));
+	    $this->getServer()->getCommandMap()->register("ccfeed", new Feed("ccfeed", $this));
+	    $this->getServer()->getCommandMap()->register("ccheal", new Heal("ccheal", $this))
+	    $this->getServer()->getCommandMap()->register("ccping", new Ping("ccping", $this));
+	    $this->getServer()->getCommandMap()->register("cckickall", new KickAll("cckickall", $this));
+	    $this->getServer()->getCommandMap()->register("ccops", new Ops("ccops", $this));
+            $this->getServer()->getCommandMap()->register("ccspawn", new Spawn("ccspawn", $this));
+	    $this->getServer()->getCommandMap()->register("ccsetspawn", new SetSpawn("ccsetspawn", $this));
+	    $this->getServer()->getCommandMap()->register("cctop", new Top("cctop", $this));
+	    $this->getServer()->getCommandMap()->register("ccnick", new Nick($this));
+            $this->getServer()->getCommandMap()->register("ccxyz", new XYZ($this));
         
             $this->getServer()->getPluginManager()->registerEvents((new SimpleCrates($this)), $this);
             $this->getServer()->getPluginManager()->registerEvents(new CustomPotionEvent($this), $this);
             $this->getServer()->getPluginManager()->registerEvents(new Potions($this), $this);
-            $this->getServer()->getLogger()->notice("Core Enabled!");
+            $this->getServer()->getLogger()->notice("[CowCraft] Core Enabled, Installing SuperCow v1.0.0 for Scrolls Support!");
     }
 }
