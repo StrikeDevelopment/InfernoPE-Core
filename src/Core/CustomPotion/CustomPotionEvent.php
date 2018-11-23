@@ -18,7 +18,7 @@ class CustomPotionEvent implements Listener {
 		
 		$player = $event->getPlayer();
 		
-		if($event->getItem()->getId() === 373) {
+		if($event->getItem()->getId() === 339) {
 		
 			$damage = $event->getItem()->getDamage();
 			
@@ -30,9 +30,9 @@ class CustomPotionEvent implements Listener {
 				$player->addEffect(Effect::getEffect(Effect::HASTE)->setDuration(360*20)->setAmplifier(2));
 				$player->addEffect(Effect::getEffect(Effect::NIGHT_VISION)->setDuration(180*20)->setAmplifier(1));
 				
-				$player->getInventory()->removeItem(Item::get(Item::POTION, 100, 1));
+				$player->getInventory()->removeItem(Item::get(Item::PAPER, 100, 1));
 				$player->getInventory()->addItem(Item::get(Item::GLASS_BOTTLE, 0, 1));
-				$player->addTitle(TF::DARK_GRAY . TF::BOLD . "(" . TF::GREEN . "!" . TF::DARK_GRAY . ") " . TF::RESET . TF::GRAY . "Consumed:", TF::RED . TF::BOLD . "Raiding Elixir");
+				$player->addTitle(TF::DARK_GRAY . TF::BOLD . "(" . TF::GREEN . "!" . TF::DARK_GRAY . ") " . TF::RESET . TF::GRAY . "Activated:", TF::RED . TF::BOLD . "Raiding Scroll");
 				
 				break;
 				
@@ -43,9 +43,9 @@ class CustomPotionEvent implements Listener {
 				$player->addEffect(Effect::getEffect(Effect::NIGHT_VISION)->setDuration(360*20)->setAmplifier(1));
 				$player->addEffect(Effect::getEffect(Effect::FIRE_RESISTANCE)->setDuration(360*20)->setAmplifier(1));
 				
-				$player->getInventory()->removeItem(Item::get(Item::POTION, 101, 1));
+				$player->getInventory()->removeItem(Item::get(Item::PAPER, 101, 1));
 				$player->getInventory()->addItem(Item::get(Item::GLASS_BOTTLE, 0, 1));
-				$player->addTitle(TF::DARK_GRAY . TF::BOLD . "(" . TF::GREEN . "!" . TF::DARK_GRAY . ") " . TF::RESET . TF::GRAY . "Consumed:", TF::AQUA . TF::BOLD . "PVP Elixir");
+				$player->addTitle(TF::DARK_GRAY . TF::BOLD . "(" . TF::GREEN . "!" . TF::DARK_GRAY . ") " . TF::RESET . TF::GRAY . "Activated:", TF::AQUA . TF::BOLD . "PVP Scroll");
 				
 				break;
 				
@@ -57,7 +57,7 @@ class CustomPotionEvent implements Listener {
 		
 		$player = $event->getPlayer();
 		
-		if($event->getItem()->getId() === 373) {
+		if($event->getItem()->getId() === 339) {
 			
 			$damage = $event->getItem()->getDamage();
 			$hand = $player->getInventory()->getItemInHand();
@@ -66,14 +66,14 @@ class CustomPotionEvent implements Listener {
 				
 				case 100:
 				
-				$item = Item::get(Item::POTION, 100, 1);
+				$item = Item::get(Item::PAPER, 100, 1);
 				
 				$player->getInventory()->removeItem($item);
 				
-				$item->setCustomName(TF::RESET . TF::RED . TF::BOLD . "Raiding Elixir" . PHP_EOL . PHP_EOL .
-									 TF::RESET . TF::DARK_GRAY . " * " . TF::GREEN . "Speed I" . TF::GRAY . " (6:00)" . PHP_EOL .
-									 TF::DARK_GRAY . " * " . TF::GREEN . "Haste II" . TF::GRAY . " (6:00)" . PHP_EOL .
-									 TF::DARK_GRAY . " * " . TF::GREEN . "Night Vision" . TF::GRAY . " (3:00)");
+				$item->setCustomName(TF::RESET . TF::RED . TF::BOLD . "Raiding Scroll" . PHP_EOL . PHP_EOL .
+									 TF::RESET . TF::DARK_GRAY . " » " . TF::GREEN . "Speed I" . TF::GRAY . " (6:00)" . PHP_EOL .
+									 TF::DARK_GRAY . " » " . TF::GREEN . "Haste II" . TF::GRAY . " (6:00)" . PHP_EOL .
+									 TF::DARK_GRAY . " » " . TF::GREEN . "Night Vision" . TF::GRAY . " (3:00)");
 				
 				$player->getInventory()->addItem($item);
 				
@@ -81,15 +81,15 @@ class CustomPotionEvent implements Listener {
 				
 				case 101:
 				
-				$item = Item::get(Item::POTION, 101, 1);
+				$item = Item::get(Item::PAPER, 101, 1);
 				
 				$player->getInventory()->removeItem($item);
 				
-				$item->setCustomName(TF::RESET . TF::AQUA . TF::BOLD . "PVP Elixir" . PHP_EOL . PHP_EOL .
-									 TF::RESET . TF::DARK_GRAY . " * " . TF::GREEN . "Jump Boost I" . TF::GRAY . " (3:00)" . PHP_EOL .
-									 TF::DARK_GRAY . " * " . TF::GREEN . "Strength I" . TF::GRAY . " (0:30)" . PHP_EOL .
-									 TF::DARK_GRAY . " * " . TF::GREEN . "Night Vision" . TF::GRAY . " (6:00)" . PHP_EOL .
-									 TF::DARK_GRAY . " * " . TF::GREEN . "Fire Resistance" . TF::GRAY . " (6:00)");
+				$item->setCustomName(TF::RESET . TF::AQUA . TF::BOLD . "PVP Scroll" . PHP_EOL . PHP_EOL .
+									 TF::RESET . TF::DARK_GRAY . " » " . TF::GREEN . "Jump Boost I" . TF::GRAY . " (3:00)" . PHP_EOL .
+									 TF::DARK_GRAY . " » " . TF::GREEN . "Strength I" . TF::GRAY . " (0:30)" . PHP_EOL .
+									 TF::DARK_GRAY . " » " . TF::GREEN . "Night Vision" . TF::GRAY . " (6:00)" . PHP_EOL .
+									 TF::DARK_GRAY . " » " . TF::GREEN . "Fire Resistance" . TF::GRAY . " (6:00)");
 									 
 				$player->getInventory()->addItem($item);
 				
