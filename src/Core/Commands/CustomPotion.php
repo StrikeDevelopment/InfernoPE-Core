@@ -72,7 +72,7 @@ class CustomPotion extends PluginCommand {
 		
 		if(!$sender->hasPermission("core.elixer")) {
 					
-			$sender->sendMessage(TF::BOLD . TF::DARK_GRAY . "(" . TF::RED . "!" . TF::DARK_GRAY . ") " . TF::RESET . TF::GRAY . "You don't have permission to use this command.");
+			$sender->sendMessage(Core::PERM_RANK);
 				
 		}
 
