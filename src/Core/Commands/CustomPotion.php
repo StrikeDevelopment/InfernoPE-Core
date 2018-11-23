@@ -38,13 +38,13 @@ class CustomPotion extends PluginCommand {
 							 
 						case "raiding":
 							 
-						$sender->sendMessage(TF::BOLD . TF::DARK_GRAY . "(" . TF::GREEN . "!" . TF::DARK_GRAY . ") " . TF::RESET . TF::GRAY . "You have given " . $name . " a " . TF::RED . TF::BOLD . "Raiding Elixir" . TF::RESET . TF::GRAY . ".");
+						$sender->sendMessage(TF::BOLD . TF::DARK_GRAY . "(" . TF::GREEN . "!" . TF::DARK_GRAY . ") " . TF::RESET . TF::GRAY . "You have given " . $name . " a " . TF::RED . TF::BOLD . "Raiding Scroll" . TF::RESET . TF::GRAY . ".");
 							 
-						$raiding = Item::get(Item::POTION, 100, 1);
-						$raiding->setCustomName(TF::RESET . TF::RED . TF::BOLD . "Raiding Elixir" . PHP_EOL . PHP_EOL .
-												TF::RESET . TF::DARK_GRAY . " * " . TF::GREEN . "Speed I" . TF::GRAY . " (6:00)" . PHP_EOL .
-												TF::DARK_GRAY . " * " . TF::GREEN . "Haste II" . TF::GRAY . " (6:00)" . PHP_EOL .
-												TF::DARK_GRAY . " * " . TF::GREEN . "Night Vision" . TF::GRAY . " (3:00)");
+						$raiding = Item::get(Item::PAPER, 100, 1);
+						$raiding->setCustomName(TF::RESET . TF::RED . TF::BOLD . "Raiding Scroll" . PHP_EOL . PHP_EOL .
+												TF::RESET . TF::DARK_GRAY . " » " . TF::GREEN . "Speed I" . TF::GRAY . " (6:00)" . PHP_EOL .
+												TF::DARK_GRAY . " » " . TF::GREEN . "Haste II" . TF::GRAY . " (6:00)" . PHP_EOL .
+												TF::DARK_GRAY . " » " . TF::GREEN . "Night Vision" . TF::GRAY . " (3:00)");
 													 
 						$player->getInventory()->addItem($raiding);
 							 
@@ -52,14 +52,14 @@ class CustomPotion extends PluginCommand {
 							 
 						case "pvp":
 							 
-						$sender->sendMessage(TF::BOLD . TF::DARK_GRAY . "(" . TF::GREEN . "!" . TF::DARK_GRAY . ") " . TF::RESET . TF::GRAY . "You have given " . $name . " a " . TF::AQUA . TF::BOLD . "PVP Elixir" . TF::RESET . TF::GRAY . ".");
+						$sender->sendMessage(TF::BOLD . TF::DARK_GRAY . "(" . TF::GREEN . "!" . TF::DARK_GRAY . ") " . TF::RESET . TF::GRAY . "You have given " . $name . " a " . TF::AQUA . TF::BOLD . "PVP Scroll" . TF::RESET . TF::GRAY . ".");
 							 
-						$pvp = Item::get(Item::POTION, 101, 1);
-						$pvp->setCustomName(TF::RESET . TF::AQUA . TF::BOLD . "PVP Elixir" . PHP_EOL . PHP_EOL .
-											TF::RESET . TF::DARK_GRAY . " * " . TF::GREEN . "Jump Boost I" . TF::GRAY . " (3:00)" . PHP_EOL .
-											TF::DARK_GRAY . " * " . TF::GREEN . "Strength I" . TF::GRAY . " (0:30)" . PHP_EOL .
-											TF::DARK_GRAY . " * " . TF::GREEN . "Night Vision" . TF::GRAY . " (6:00)" . PHP_EOL .
-											TF::DARK_GRAY . " * " . TF::GREEN . "Fire Resistance" . TF::GRAY . " (6:00)");
+						$pvp = Item::get(Item::PAPER, 101, 1);
+						$pvp->setCustomName(TF::RESET . TF::AQUA . TF::BOLD . "PVP Scroll" . PHP_EOL . PHP_EOL .
+											TF::RESET . TF::DARK_GRAY . " » " . TF::GREEN . "Jump Boost I" . TF::GRAY . " (3:00)" . PHP_EOL .
+											TF::DARK_GRAY . " » " . TF::GREEN . "Strength I" . TF::GRAY . " (0:30)" . PHP_EOL .
+											TF::DARK_GRAY . " » " . TF::GREEN . "Night Vision" . TF::GRAY . " (6:00)" . PHP_EOL .
+											TF::DARK_GRAY . " » " . TF::GREEN . "Fire Resistance" . TF::GRAY . " (6:00)");
 													 
 						$player->getInventory()->addItem($pvp);
 							 
@@ -78,7 +78,7 @@ class CustomPotion extends PluginCommand {
 
 		else {
 				
-			$sender->sendMessage(TF::BOLD . TF::DARK_GRAY . "(" . TF::GOLD . "!" . TF::DARK_GRAY . ") " . TF::RESET . TF::GRAY . "Usage: /custompotion (player) (potion)");
+			$sender->sendMessage(TF::BOLD . TF::DARK_GRAY . "(" . TF::GOLD . "!" . TF::DARK_GRAY . ") " . TF::RESET . TF::GRAY . "Usage: /givescroll (player) (scroll)");
 				
 		}		
 	}
