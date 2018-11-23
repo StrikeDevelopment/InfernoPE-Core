@@ -11,7 +11,7 @@ use pocketmine\command\PluginCommand;
 
 use pocketmine\utils\TextFormat as C;
 
-use Core\Main;
+use Core\Loader;
 
 class Feed extends PluginCommand{
 
@@ -25,13 +25,13 @@ class Feed extends PluginCommand{
     public function execute(CommandSender $sender, string $commandLabel, array $args): bool{
                     if($sender instanceof Player){
                     if (!$sender->hasPermission("core.feed")) {
-                        $sender->sendMessage(C::RED . "§l§7(§c!§7) §r§4Buy A Rank To Use This Command!");
+                        $sender->sendMessage(Core::PERM_RANK);
                         return false;
                     }
                         $sender->setFood(20);
                         $sender->sendMessage(C::GREEN . "§l§7(§a!§7) §r§2Your Hunger Has Been Restored!");
         }else{
-          $sender->sendMessage(C::RED . "You are not In-Game.");
+          $sender->sendMessage(Core::USE_IN_GAME);
         }
             return true;
     }
