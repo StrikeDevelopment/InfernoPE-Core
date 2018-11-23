@@ -11,7 +11,7 @@ use pocketmine\command\PluginCommand;
 
 use pocketmine\utils\TextFormat as C;
 
-use Core\Main;
+use Core\Loader;
 
 class Ping extends PluginCommand{
 
@@ -25,7 +25,7 @@ class Ping extends PluginCommand{
                     if($sender instanceof Player){
                         $sender->sendMessage(C::GREEN . "Ping: " . C::GOLD . $sender->getPing() . "");
         }else{
-          $sender->sendMessage(C::RED . "You are not In-Game.");
+          $sender->sendMessage(Core::USE_IN_GAME);
         }
             return true;
     }
